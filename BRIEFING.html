@@ -1,0 +1,209 @@
+<meta charset="utf-8">
+<title>Maple Street Lemonade — Kitchen Table Audit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDF1E9; --ink:#1F2A24; --rule:#BCCBB8; --margin:#C0483C;
+    --tab:#D9C7A3; --lemon:#E4BE3F; --mute:#5E6D5F;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:#DDE4D9;font-family:'Source Serif 4',Georgia,serif;color:var(--ink);
+       font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .sheet{max-width:760px;margin:0 auto;background:var(--paper);
+         background-image:repeating-linear-gradient(transparent,transparent 30px,var(--rule) 30px,var(--rule) 30.5px);
+         border-left:2px solid var(--margin);padding:0 46px 90px 60px;position:relative;
+         box-shadow:0 0 0 1px rgba(31,42,36,.08)}
+  .lbl{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.13em;
+       text-transform:uppercase;color:var(--margin);font-weight:500}
+  h1{font-size:33px;line-height:1.15;font-weight:600;margin:6px 0 4px}
+  h2{font-size:20px;font-weight:600;margin:0 0 10px}
+  .head{padding-top:52px;border-bottom:1.5px solid var(--ink);padding-bottom:22px;margin-bottom:34px}
+  .sub{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--mute);margin-top:12px}
+  section{margin:0 0 42px}
+  .num{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.13em;color:var(--mute)}
+  p{margin:0 0 14px}
+  .hand{font-family:'Caveat',cursive;font-size:22px;line-height:1.35;color:var(--margin);
+        margin:18px 0 18px 8px;display:block}
+  .rules{list-style:none;padding:0;margin:18px 0 0;counter-reset:r}
+  .rules li{counter-increment:r;padding:16px 0 16px 52px;border-top:1px solid var(--rule);position:relative}
+  .rules li:before{content:counter(r);position:absolute;left:0;top:16px;width:32px;height:32px;
+       border:1.5px solid var(--margin);border-radius:50%;display:flex;align-items:center;
+       justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--margin)}
+  .rules strong{display:block;font-weight:600;margin-bottom:2px}
+  .q{border-top:1px solid var(--rule);padding:16px 0}
+  .q:last-of-type{border-bottom:1px solid var(--rule)}
+  .qtxt{font-weight:600;margin-bottom:9px}
+  .star{background:var(--lemon);padding:1px 7px;font-family:'IBM Plex Mono',monospace;
+        font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#4A3B08;margin-left:7px;
+        vertical-align:2px}
+  input[type=text]{width:100%;font-family:'Caveat',cursive;font-size:21px;color:var(--margin);
+        background:transparent;border:0;border-bottom:1px dashed var(--rule);padding:3px 2px;outline:0}
+  input[type=text]:focus{border-bottom-color:var(--margin)}
+  .conf{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mute);margin-top:7px}
+  .conf input{width:34px;font-family:'IBM Plex Mono',monospace;font-size:12px;text-align:center;
+        border:1px solid var(--rule);background:transparent;color:var(--ink);padding:2px}
+  button{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+        background:var(--ink);color:var(--paper);border:0;padding:11px 18px;cursor:pointer;margin-top:20px}
+  button:hover{background:var(--margin)}
+  figure{margin:22px 0;text-align:center}
+  figure img{max-width:100%;border:1px solid var(--rule)}
+  .ph{border:1.5px dashed var(--rule);padding:38px 20px;font-family:'IBM Plex Mono',monospace;
+      font-size:12px;color:var(--mute);background:rgba(255,255,255,.35)}
+  figcaption{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--mute);margin-top:8px}
+  .box{border:1.5px solid var(--ink);padding:20px 22px;background:rgba(255,255,255,.45);margin:20px 0}
+  .stamp{display:inline-block;border:2.5px solid var(--margin);color:var(--margin);
+        font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.2em;padding:7px 16px;
+        transform:rotate(-4deg);font-weight:500}
+  ul.plain{padding-left:20px;margin:10px 0}
+  ul.plain li{margin-bottom:5px}
+  .foot{border-top:1.5px solid var(--ink);padding-top:18px;font-family:'IBM Plex Mono',monospace;
+        font-size:11.5px;color:var(--mute);line-height:1.8}
+  @media(max-width:640px){.sheet{padding:0 22px 60px 28px}h1{font-size:26px}}
+  @media print{body{background:#fff}.sheet{box-shadow:none}button{display:none}}
+</style>
+
+<div class="sheet">
+
+  <div class="head">
+    <span class="lbl">Field brief · Stage 0</span>
+    <h1>Maple Street Lemonade</h1>
+    <div class="sub">A kitchen-table audit · shoebox, notebook, and one very full inbox</div>
+  </div>
+
+  <section>
+    <span class="num">I · The situation</span>
+    <h2>Somebody finally asked her a question she couldn't answer</h2>
+    <p>She's been running a lemonade stand out front on Maple Street for about six months, plus a booth at the Saturday farmers market. It works. Around $400 a week. She buys the lemons, makes the syrup, works both spots, and does whatever bookkeeping gets done.</p>
+    <p>There is no system. There was never a reason for one. She is the system — she knows what to buy because she remembers last Saturday, and she knows what things cost because she was there when she paid for them.</p>
+    <span class="hand">it worked fine until it didn't</span>
+    <p>Now the orders are getting bigger than one person can improvise. The kind where you have to say yes to a quantity and a price and a date, in advance, in writing. And to answer one of those, she'd have to know things precisely that she has only ever known approximately.</p>
+    <p>So the records came out of the drawer. All of them.</p>
+  </section>
+
+  <section>
+    <span class="num">II · Your job today</span>
+    <h2>You're the person she called</h2>
+    <p>You have a folder of her records and a couple of hours. You've never seen this business before. Everything you're about to conclude has to come from what's in front of you.</p>
+    <p>Nothing here is labeled. Nothing cross-references anything. Some of it contradicts other parts of it, and she has never had reason to notice.</p>
+    <p>This is not a puzzle someone built for you. It's what six months of a working business looks like when the person running it is the entire filing system.</p>
+  </section>
+
+  <figure>
+    <img src="assets/poster.png" alt="Hand-made flyer for Maple Street Lemonade" onerror="this.outerHTML='&lt;div class=&quot;ph&quot;&gt;assets/poster.png — drop the flyer image here&lt;/div&gt;'">
+    <figcaption>Taped to the pole at Maple + 4th since spring</figcaption>
+  </figure>
+
+  <section>
+    <span class="num">III · House rules</span>
+    <h2>Three rules, and the first one is the whole game</h2>
+    <ul class="rules">
+      <li><strong>Call it before you look.</strong> Write your answer to all five questions below <em>now</em>, before you open a single file. You will be wrong. That's the point — you can't feel a surprise you don't have a record of expecting.</li>
+      <li><strong>Say where it came from.</strong> For every answer you end up with, name the file. An answer that turns out right with nothing behind it isn't a win; it's a near miss you didn't notice.</li>
+      <li><strong>The key stays sealed.</strong> There's an answer key. It was written before you started and you don't open it until your findings are written down and dated. Reading it first costs you the only real measurement you get.</li>
+    </ul>
+  </section>
+
+  <section>
+    <span class="num">IV · Go on record</span>
+    <h2>Your five calls</h2>
+    <p>Gut answers. Ten seconds each. Confidence 1–5.</p>
+
+    <div class="q">
+      <div class="qtxt">1 · How many lemons does she need for tomorrow?</div>
+      <input type="text" id="q1" placeholder="your call">
+      <div class="conf">confidence <input type="text" id="c1" maxlength="1"> / 5</div>
+    </div>
+    <div class="q">
+      <div class="qtxt">2 · What did she pay per case last time, and to whom?</div>
+      <input type="text" id="q2" placeholder="your call">
+      <div class="conf">confidence <input type="text" id="c2" maxlength="1"> / 5</div>
+    </div>
+    <div class="q">
+      <div class="qtxt">3 · Is there anything she said she'd follow up on and didn't?</div>
+      <input type="text" id="q3" placeholder="your call">
+      <div class="conf">confidence <input type="text" id="c3" maxlength="1"> / 5</div>
+    </div>
+    <div class="q">
+      <div class="qtxt">4 · Is she actually making money at $3 a cup?<span class="star">the one that matters</span></div>
+      <input type="text" id="q4" placeholder="your call">
+      <div class="conf">confidence <input type="text" id="c4" maxlength="1"> / 5</div>
+    </div>
+    <div class="q">
+      <div class="qtxt">5 · What's her best day, and why?</div>
+      <input type="text" id="q5" placeholder="your call">
+      <div class="conf">confidence <input type="text" id="c5" maxlength="1"> / 5</div>
+    </div>
+
+    <button onclick="copyCalls()">Copy my calls</button>
+    <span id="ok" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--mute);margin-left:12px"></span>
+    <p style="margin-top:14px;font-size:15px;color:var(--mute)">Paste them into section 0 of the findings log. Then, and only then, open the folder.</p>
+  </section>
+
+  <figure>
+    <img src="assets/tally.png" alt="Notebook page of handwritten tally marks" onerror="this.outerHTML='&lt;div class=&quot;ph&quot;&gt;assets/tally.png — drop the notebook image here&lt;/div&gt;'">
+    <figcaption>The spiral notebook, for the Saturdays the spreadsheet didn't get</figcaption>
+  </figure>
+
+  <section>
+    <span class="num">V · What's in the folder</span>
+    <h2>Everything she could find</h2>
+    <ul class="plain">
+      <li>A sales spreadsheet, kept when she remembered</li>
+      <li>One stock count, done once</li>
+      <li>A scratch sheet where receipts got transcribed in batches</li>
+      <li>The receipts themselves</li>
+      <li>Texts with two suppliers, three months, interleaved</li>
+      <li>An inbox she treats as a to-do list</li>
+      <li>Notes to herself, undated</li>
+      <li>The farmers market vendor packet</li>
+      <li>The recipe, on a scrap</li>
+      <li>The flyer and the notebook page above</li>
+    </ul>
+    <span class="hand">nothing in here is labeled &quot;important&quot;</span>
+  </section>
+
+  <section>
+    <span class="num">VI · How this gets scored</span>
+    <h2>Three buckets, and the middle one is the prize</h2>
+    <div class="box">
+      <p style="margin-bottom:10px"><strong>Found what was planted.</strong> Fine. Expected.</p>
+      <p style="margin-bottom:10px"><strong>Found something nobody planted.</strong> The best outcome. The generator made messes it never noticed, and those are the only genuinely un-authored problems in here — the closest thing to what a real company's records actually look like. Nobody has the key to those.</p>
+      <p style="margin:0"><strong>Missed it.</strong> Also information. Missing something tells you what a room of forty people will miss too.</p>
+    </div>
+    <p style="text-align:center;margin-top:26px"><span class="stamp">Key sealed until findings filed</span></p>
+  </section>
+
+  <section>
+    <span class="num">VII · After the audit</span>
+    <h2>Then it gets interesting</h2>
+    <p>Once you know where the records fail, you get to do something about it — write a standing instruction that makes the assistant show its reasoning before it shows you a number, then hand a whole morning's prep to something that runs while you're asleep and tells you what it found.</p>
+    <p>That's the part this is really about. The audit is just how you earn the right to have an opinion about it.</p>
+  </section>
+
+  <div class="foot">
+    Stage 0 · Lemonade Works<br>
+    Next: open <strong>FINDINGS-LOG.md</strong>, section 0<br>
+    Do not open the answer key.
+  </div>
+
+</div>
+
+<script>
+function copyCalls(){
+  var out="## 0 — Pre-commitment\n\n| # | Question | My guess | Confidence |\n|---|---|---|---|\n";
+  var qs=["How many lemons for tomorrow?","Price per case, and to whom?","Anything followed up on and didn't?","Making money at $3 a cup?","Best day, and why?"];
+  for(var i=1;i<=5;i++){
+    var a=(document.getElementById("q"+i).value||"—").replace(/\|/g,"/");
+    var c=document.getElementById("c"+i).value||"—";
+    out+="| "+i+" | "+qs[i-1]+" | "+a+" | "+c+" |\n";
+  }
+  out+="\nSealed: "+new Date().toLocaleString()+"\n";
+  navigator.clipboard.writeText(out).then(function(){
+    document.getElementById("ok").textContent="copied — paste into the log";
+  },function(){
+    document.getElementById("ok").textContent="copy failed — select and copy manually";
+  });
+}
+</script>
