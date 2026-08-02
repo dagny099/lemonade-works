@@ -90,11 +90,6 @@
     <p>This is not a puzzle someone built for you. It's what six months of a working business looks like when the person running it is the entire filing system.</p>
   </section>
 
-  <figure>
-    <img src="assets/poster.png" alt="Hand-made flyer for Maple Street Lemonade" onerror="this.outerHTML='&lt;div class=&quot;ph&quot;&gt;assets/poster.png — drop the flyer image here&lt;/div&gt;'">
-    <figcaption>Taped to the pole at Maple + 4th since spring</figcaption>
-  </figure>
-
   <section>
     <span class="num">III · House rules</span>
     <h2>Three rules, and the first one is the whole game</h2>
@@ -111,7 +106,7 @@
     <p>Gut answers. Ten seconds each. Confidence 1–5.</p>
 
     <div class="q">
-      <div class="qtxt">1 · How many lemons does she need for tomorrow?</div>
+      <div class="qtxt">1 · How many lemons does she need for the next selling day?</div>
       <input type="text" id="q1" placeholder="your call">
       <div class="conf">confidence <input type="text" id="c1" maxlength="1"> / 5</div>
     </div>
@@ -142,8 +137,8 @@
   </section>
 
   <figure>
-    <img src="assets/tally.png" alt="Notebook page of handwritten tally marks" onerror="this.outerHTML='&lt;div class=&quot;ph&quot;&gt;assets/tally.png — drop the notebook image here&lt;/div&gt;'">
-    <figcaption>The spiral notebook, for the Saturdays the spreadsheet didn't get</figcaption>
+    <img src="assets/poster.png" alt="Hand-made flyer for Maple Street Lemonade" onerror="this.outerHTML='&lt;div class=&quot;ph&quot;&gt;assets/poster.png — drop the flyer image here&lt;/div&gt;'">
+    <figcaption>Taped to the pole at Maple + 4th since spring</figcaption>
   </figure>
 
   <section>
@@ -159,13 +154,25 @@
       <li>Notes to herself, undated</li>
       <li>The farmers market vendor packet</li>
       <li>The recipe, on a scrap</li>
-      <li>The flyer and the notebook page above</li>
+      <li>The flyer and the notebook page below</li>
     </ul>
     <span class="hand">nothing in here is labeled &quot;important&quot;</span>
   </section>
 
+  <figure>
+    <img src="assets/tally.png" alt="Notebook page of handwritten tally marks" onerror="this.outerHTML='&lt;div class=&quot;ph&quot;&gt;assets/tally.png — drop the notebook image here&lt;/div&gt;'">
+    <figcaption>The spiral notebook, for the Saturdays the spreadsheet didn't get</figcaption>
+  </figure>
+
   <section>
-    <span class="num">VI · How this gets scored</span>
+    <span class="num">VI · After the audit</span>
+    <h2>Then it gets interesting</h2>
+    <p>Once you know where the records fail, you get to do something about it — write a standing instruction that makes the assistant show its evidence, assumptions, and arithmetic before it shows you a number, then hand a whole morning's prep to something that runs while you're asleep and tells you what it found.</p>
+    <p>That's the part this is really about. The audit is just how you earn the right to have an opinion about it.</p>
+  </section>
+
+  <section>
+    <span class="num">VII · How this gets scored</span>
     <h2>Three buckets, and the middle one is the prize</h2>
     <div class="box">
       <p style="margin-bottom:10px"><strong>Found what was planted.</strong> Fine. Expected.</p>
@@ -173,13 +180,6 @@
       <p style="margin:0"><strong>Missed it.</strong> Also information. Missing something tells you what a room of forty people will miss too.</p>
     </div>
     <p style="text-align:center;margin-top:26px"><span class="stamp">Key sealed until findings filed</span></p>
-  </section>
-
-  <section>
-    <span class="num">VII · After the audit</span>
-    <h2>Then it gets interesting</h2>
-    <p>Once you know where the records fail, you get to do something about it — write a standing instruction that makes the assistant show its reasoning before it shows you a number, then hand a whole morning's prep to something that runs while you're asleep and tells you what it found.</p>
-    <p>That's the part this is really about. The audit is just how you earn the right to have an opinion about it.</p>
   </section>
 
   <div class="foot">
@@ -193,7 +193,7 @@
 <script>
 function copyCalls(){
   var out="## 0 — Pre-commitment\n\n| # | Question | My guess | Confidence |\n|---|---|---|---|\n";
-  var qs=["How many lemons for tomorrow?","Price per case, and to whom?","Anything followed up on and didn't?","Making money at $3 a cup?","Best day, and why?"];
+  var qs=["How many lemons for the next selling day?","Price per case, and to whom?","Anything followed up on and didn't?","Making money at $3 a cup?","Best day, and why?"];
   for(var i=1;i<=5;i++){
     var a=(document.getElementById("q"+i).value||"—").replace(/\|/g,"/");
     var c=document.getElementById("c"+i).value||"—";
